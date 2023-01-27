@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import { Inter } from '@next/font/google';
 import { Box, Text } from '@chakra-ui/react';
 
-const inter = Inter({ subsets: ['latin'] });
+import NavBar from '../components/NavBar';
 
 export default function Home() {
   return (
@@ -20,7 +19,7 @@ export default function Home() {
         background="url('../../images/landing-bg.svg') no-repeat"
         backgroundSize="cover"
       >
-        <Text>Starting Point!!!</Text>
+        <NavBar />
       </Box>
     </>
   );
