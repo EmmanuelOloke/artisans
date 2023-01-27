@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
-import { Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,7 +14,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Text>Starting Point!!!</Text>
+      <Box
+        height="100vh"
+        width="100vw"
+        background="url('../../images/landing-bg.svg') no-repeat"
+        backgroundSize="cover"
+      >
+        <Text>Starting Point!!!</Text>
+      </Box>
     </>
   );
 }
