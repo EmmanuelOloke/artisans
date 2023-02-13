@@ -1,7 +1,5 @@
 import Head from 'next/head';
-import { Box, Text } from '@chakra-ui/react';
-
-import NavBar from '../components/NavBar';
+import { Box } from '@chakra-ui/react';
 
 export default function Home() {
   return (
@@ -13,13 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box
-        height="100vh"
-        width="100vw"
-        background="url('../../images/landing-bg.svg') no-repeat"
-        backgroundSize="cover"
-      >
-        <NavBar />
+      <Box>
+        <div>Hero section goes here</div>
       </Box>
     </>
   );
