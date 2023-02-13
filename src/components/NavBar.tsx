@@ -20,9 +20,9 @@ const NavBar = () => {
   const navRef = useRef(null);
 
   return (
-    <Box width="100vw" display="flex" justifyContent="center">
+    <Box width="100vw" display="flex" justifyContent="center" background="transparent">
       <HStack
-        w={{ base: '100%', sm: '100%', md: '100%', lg: '80%', xl: '80%', '2xl': '60%' }}
+        w={{ base: '100%', sm: '100%', md: '100%', lg: '83%', xl: '83%', '2xl': '60%' }}
         padding={{
           base: '1rem 1rem',
           sm: '1rem 1rem',
@@ -56,7 +56,7 @@ const NavBar = () => {
 
         <HStack gap={5}>
           <Link
-            href="http://localhost:3000"
+            href="/login"
             _hover={{ textDecoration: 'none' }}
             display={{
               base: 'none',
@@ -82,7 +82,7 @@ const NavBar = () => {
           </Link>
 
           <Link
-            href="http://localhost:3000"
+            href="/signup"
             _hover={{ textDecoration: 'none' }}
             display={{
               base: 'none',
