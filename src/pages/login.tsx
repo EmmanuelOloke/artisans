@@ -1,5 +1,15 @@
 import { AtSignIcon, LockIcon } from '@chakra-ui/icons';
-import { Box, Checkbox, Flex, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Checkbox,
+  Flex,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Spacer,
+  Text,
+} from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 
 function login() {
@@ -70,11 +80,11 @@ function login() {
               <Input type="tel" placeholder="Phone number" />
             </InputGroup>
 
-            <Flex justifyContent="space-between" gap={4}>
+            <Flex width="100%">
               <Checkbox colorScheme="blue">Remember me</Checkbox>
-
+              <Spacer />
               <Text color="#3A66DB" fontWeight="bold">
-                Recover Password
+                <Link href="/">Recover Password</Link>
               </Text>
             </Flex>
           </Box>
