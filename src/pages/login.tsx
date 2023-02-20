@@ -1,3 +1,4 @@
+import LoginButton from '../components/LoginButton';
 import { AtSignIcon, LockIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -87,6 +88,8 @@ function login() {
                 <Link href="/">Recover Password</Link>
               </Text>
             </Flex>
+
+            <LoginButton />
           </Box>
         </Flex>
       </Box>
