@@ -5,6 +5,7 @@ import {
   Box,
   Checkbox,
   Flex,
+  Image,
   Input,
   InputGroup,
   InputRightElement,
@@ -40,8 +41,14 @@ function login() {
             '2xl': '38rem',
           }}
         >
-          <Box width="50%" backgroundColor="#3A66DB">
-            Some content here
+          <Box
+            width="50%"
+            backgroundColor="#FFFFFF"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Image src="./images/trade.gif" alt="people trading gif" width="23rem" />
           </Box>
 
           <Box
@@ -49,8 +56,8 @@ function login() {
             flexDirection="column"
             alignItems="center"
             width="50%"
-            backgroundColor="#FFFFFF"
-            gap="4.5rem"
+            backgroundColor="#F0F3F9"
+            gap="4rem"
           >
             <Flex flexDirection="column" gap={10} textAlign="center" width="25rem" marginTop="5rem">
               <VStack>
