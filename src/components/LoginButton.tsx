@@ -12,6 +12,7 @@ const LoginButton = () => {
         color="#FFFFFF"
         backgroundColor="#3A66DB"
         width="25rem"
+        height="3rem"
         fontWeight="bold"
         _hover={{ backgroundColor: '#82A2F7' }}
       >
