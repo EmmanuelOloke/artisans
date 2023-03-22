@@ -15,7 +15,14 @@ const LoginButton = () => {
         color="gray"
         border="1px solid #e7e7e9"
         backgroundColor="white"
-        width="25rem"
+        width={{
+          base: '20.5rem',
+          sm: '20.5rem',
+          md: '20.5rem',
+          lg: '25rem',
+          xl: '25rem',
+          '2xl': '25rem',
+        }}
         height="3rem"
         fontWeight="bold"
         _hover={{ backgroundColor: '#e7e7e9' }}

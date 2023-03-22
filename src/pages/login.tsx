@@ -33,9 +33,9 @@ function login() {
       >
         <Flex
           height={{
-            base: '26.5rem',
-            sm: '26.5rem',
-            md: '26.5rem',
+            base: '40rem',
+            sm: '40rem',
+            md: '40rem',
             lg: '38rem',
             xl: '38rem',
             '2xl': '38rem',
@@ -44,7 +44,14 @@ function login() {
           <Box
             width="50%"
             backgroundColor="#FFFFFF"
-            display="flex"
+            display={{
+              base: 'none',
+              sm: 'none',
+              md: 'none',
+              lg: 'flex',
+              xl: 'flex',
+              '2xl': 'flex',
+            }}
             justifyContent="center"
             alignItems="center"
           >
@@ -55,11 +62,31 @@ function login() {
             display="flex"
             flexDirection="column"
             alignItems="center"
-            width="50%"
-            backgroundColor="#F0F3F9"
+            width={{ base: '100%', sm: '100%', md: '100%', lg: '50%', xl: '50%', '2xl': '50%' }}
+            backgroundColor={{
+              base: '#FFFFFF',
+              sm: '#FFFFFF',
+              md: '#FFFFFF',
+              lg: '#F0F3F9',
+              xl: '#F0F3F9',
+              '2xl': '#F0F3F9',
+            }}
             gap="4rem"
           >
-            <Flex flexDirection="column" gap={10} textAlign="center" width="25rem" marginTop="5rem">
+            <Flex
+              flexDirection="column"
+              gap={10}
+              textAlign="center"
+              width={{
+                base: '90%',
+                sm: '90%',
+                md: '90%',
+                lg: '25rem',
+                xl: '25rem',
+                '2xl': '25rem',
+              }}
+              marginTop="5rem"
+            >
               <VStack>
                 <Text
                   fontWeight="extrabold"
