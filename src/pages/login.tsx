@@ -1,4 +1,5 @@
 import LoginButton from '../components/LoginButton';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 import { AtSignIcon, LockIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -9,6 +10,7 @@ import {
   InputRightElement,
   Spacer,
   Text,
+  VStack,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
@@ -46,50 +48,71 @@ function login() {
             display="flex"
             flexDirection="column"
             alignItems="center"
-            justifyContent="center"
             width="50%"
             backgroundColor="#FFFFFF"
+            gap="4.5rem"
           >
-            <Text
-              fontWeight="extrabold"
-              fontSize={{
-                base: '1.5rem',
-                sm: '1.5rem',
-                md: '1.5rem',
-                lg: '2rem',
-                xl: '2rem',
-                '2xl': '2rem',
-              }}
-              color="#3A66DB"
-            >
-              Artisans
-            </Text>
+            <Flex flexDirection="column" gap={10} textAlign="center" width="25rem" marginTop="5rem">
+              <VStack>
+                <Text
+                  fontWeight="extrabold"
+                  fontSize={{
+                    base: '1.5rem',
+                    sm: '1.5rem',
+                    md: '1.5rem',
+                    lg: '2rem',
+                    xl: '2rem',
+                    '2xl': '2rem',
+                  }}
+                  color="#3A66DB"
+                >
+                  Artisans
+                </Text>
 
-            <Text color="#949796">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
+                <Text color="#949796">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit,
+                  blanditiis.
+                </Text>
+              </VStack>
 
-            <InputGroup>
-              <InputRightElement pointerEvents="none">
-                <AtSignIcon color="gray.300" />
-              </InputRightElement>
-              <Input type="tel" placeholder="Phone number" />
-            </InputGroup>
+              <VStack gap={3}>
+                <InputGroup>
+                  <InputRightElement pointerEvents="none">
+                    <AtSignIcon color="gray.300" />
+                  </InputRightElement>
+                  <Input type="tel" placeholder="Email" />
+                </InputGroup>
 
-            <InputGroup>
-              <InputRightElement pointerEvents="none">
-                <LockIcon color="gray.300" />
-              </InputRightElement>
-              <Input type="tel" placeholder="Phone number" />
-            </InputGroup>
+                <InputGroup>
+                  <InputRightElement pointerEvents="none">
+                    <LockIcon color="gray.300" />
+                  </InputRightElement>
+                  <Input type="tel" placeholder="Password" />
+                </InputGroup>
 
-            <Flex width="100%">
-              <Checkbox colorScheme="blue">Remember me</Checkbox>
-              <Spacer />
-              <Text color="#3A66DB" fontWeight="bold">
-                <Link href="/">Recover Password</Link>
-              </Text>
+                <Flex width="100%">
+                  <Checkbox colorScheme="blue">Remember me</Checkbox>
+                  <Spacer />
+                  <Text color="#3A66DB" fontWeight="bold" _hover={{ color: '#82A2F7' }}>
+                    <Link href="/">Recover Password</Link>
+                  </Text>
+                </Flex>
+              </VStack>
+
+              <VStack>
+                <LoginButton />
+                <GoogleSignInButton />
+              </VStack>
             </Flex>
 
-            <LoginButton />
+            <Box color="#949796" display="flex" gap="0.7rem">
+              Don&apos;t have an account yet?{' '}
+              <Link href="/signup">
+                <Text color="#3A66DB" fontWeight="bold" _hover={{ color: '#82A2F7' }}>
+                  Sign up
+                </Text>
+              </Link>
+            </Box>
           </Box>
         </Flex>
       </Box>
