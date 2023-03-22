@@ -188,7 +188,7 @@ const NavBar = () => {
 
           <DrawerBody display="flex" justifyContent="center" alignItems="center">
             <VStack spacing="24px">
-              <Link href="http://localhost:3000" _hover={{ textDecoration: 'none' }}>
+              <Link href="/login" _hover={{ textDecoration: 'none' }}>
                 <Text
                   fontSize="1.5rem"
                   fontWeight="bold"
@@ -202,7 +202,7 @@ const NavBar = () => {
                   Log In
                 </Text>
               </Link>
-              <Link href="http://localhost:3000" _hover={{ textDecoration: 'none' }}>
+              <Link href="/signup" _hover={{ textDecoration: 'none' }}>
                 <Text
                   fontSize="1.5rem"
                   fontWeight="bold"
@@ -216,7 +216,7 @@ const NavBar = () => {
                   Sign Up
                 </Text>
               </Link>
-              <Link href="http://localhost:3000" _hover={{ textDecoration: 'none' }}>
+              <Link href="/" _hover={{ textDecoration: 'none' }}>
                 <Text
                   fontSize="1.5rem"
                   fontWeight="bold"
