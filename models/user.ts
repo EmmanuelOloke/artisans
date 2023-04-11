@@ -7,7 +7,7 @@ const UserSchema = new Schema({
     required: [true, 'Email is required'],
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Invalid email address'], // Regex to check is email provided is valid
   },
-  fullname: {
+  fullName: {
     type: String,
     required: [true, 'Fullname is required'],
     minLength: [4, 'Fullname should be at least 4 characters long'],
