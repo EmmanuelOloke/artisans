@@ -1,5 +1,4 @@
 import {
-  Box,
   Heading,
   FormControl,
   FormLabel,
@@ -10,6 +9,9 @@ import {
   VStack,
   Stack,
   Textarea,
+  Button,
+  RadioGroup,
+  Radio,
 } from '@chakra-ui/react';
 import { useTheme } from '@chakra-ui/react';
 import React from 'react';
@@ -21,14 +23,20 @@ const Signup = () => {
     <Center>
       <VStack mb={10}>
         <Stack
-          width="35rem"
+          w={{ base: '90%', lg: '35rem' }}
           borderRadius={5}
           background="#FFFFFF"
           padding="35px 35px 30px"
           mb={3}
           spacing="6"
         >
-          <Heading size="md" textTransform="uppercase" textAlign="center">
+          <Heading
+            size={{ base: 'sm', lg: 'md' }}
+            textTransform="uppercase"
+            textAlign="center"
+            color={theme.colors.brand.primary}
+            fontWeight="800"
+          >
             Create Account
           </Heading>
 
@@ -71,7 +79,12 @@ const Signup = () => {
 
               <FormControl>
                 <FormLabel>Gender</FormLabel>
-                <Input type="text" placeholder="Gender" />
+                <RadioGroup>
+                  <Stack direction="row" spacing="8">
+                    <Radio value="male">Male</Radio>
+                    <Radio value="female">Female</Radio>
+                  </Stack>
+                </RadioGroup>
               </FormControl>
 
               <FormControl>
@@ -83,6 +96,16 @@ const Signup = () => {
                 <FormLabel>Bio</FormLabel>
                 <Textarea placeholder="Some information about you abd your art"></Textarea>
               </FormControl>
+
+              <Button
+                bg={theme.colors.brand.primary}
+                height="3rem"
+                color="#FFFFFF"
+                fontWeight="700"
+                _hover={{ bgColor: '#82A2F7' }}
+              >
+                Sign Up
+              </Button>
             </Stack>
           </form>
         </Stack>
