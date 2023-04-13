@@ -13,9 +13,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (!req.body) return res.status(400).json({ error: 'Data is missing' });
 
-    const { fullName, email, password } = req.body;
+    const { email, fullName, password, phoneNumber, address, country, gender, profileImage, bio } =
+      req.body;
+
+    console.log(email, fullName, password, phoneNumber, address, country);
 
     const userExists = await User.findOne({ email });
+
+    console.log(userExists);
 
     if (userExists) return res.status(409).json({ error: 'User Already exists' });
 
@@ -24,7 +29,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const hashedPassword = await hash(password, 12);
 
-    const user = await User.create({ fullName, email, password: hashedPassword });
+    const user = await User.create({
+      email,
+      fullName,
+      password: hashedPassword,
+      phoneNumber,
+      address,
+      country,
+      gender,
+      profileImage,
+      bio,
+    });
 
     return res.status(201).json(user);
   } catch (error) {
