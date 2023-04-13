@@ -14,10 +14,46 @@ import {
   Radio,
 } from '@chakra-ui/react';
 import { useTheme } from '@chakra-ui/react';
-import React from 'react';
+import axios from 'axios';
+import React, { FormEventHandler, useState } from 'react';
 
 const Signup = () => {
   const theme = useTheme();
+
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [address, setAddress] = useState('');
+  const [country, setCountry] = useState('');
+  const [gender, setGender] = useState('');
+  const [profileImage, setProfileImage] = useState('');
+  const [bio, setBio] = useState('');
+
+  const handleSubmit = async () => {
+    try {
+      const data = {
+        email,
+        fullName,
+        password,
+        phoneNumber,
+        address,
+        country,
+        gender,
+        profileImage,
+        bio,
+      };
+
+      console.log(data);
+
+      const response = await axios.post('/api/auth/signup', data);
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Center>
@@ -43,43 +79,78 @@ const Signup = () => {
           <form>
             <Stack spacing={6}>
               <FormControl>
-                <FormLabel>Email Address</FormLabel>
-                <Input type="email" placeholder="Email" />
+                <FormLabel htmlFor="email">Email Address</FormLabel>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(event) => setEmail(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Full Name</FormLabel>
-                <Input type="text" placeholder="Full Name" />
+                <FormLabel htmlFor="fullName">Full Name</FormLabel>
+                <Input
+                  type="text"
+                  placeholder="Full Name"
+                  value={fullName}
+                  onChange={(event) => setFullName(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Password</FormLabel>
-                <Input type="password" placeholder="Enter Password" />
+                <FormLabel htmlFor="password">Password</FormLabel>
+                <Input
+                  type="password"
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(event) => setPassword(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Confirm Password</FormLabel>
-                <Input type="password" placeholder="Confirm Password" />
+                <FormLabel htmlFor="confirmPassword">Confirm Password</FormLabel>
+                <Input
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(event) => setConfirmPassword(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Phone Number</FormLabel>
-                <Input type="tel" placeholder="Phone Number" />
+                <FormLabel htmlFor="phoneNumber">Phone Number</FormLabel>
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={phoneNumber}
+                  onChange={(event) => setPhoneNumber(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Address</FormLabel>
-                <Input type="text" placeholder="Address" />
+                <FormLabel htmlFor="address">Address</FormLabel>
+                <Input
+                  type="text"
+                  placeholder="Address"
+                  value={address}
+                  onChange={(event) => setAddress(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Country</FormLabel>
-                <Input type="text" placeholder="Country" />
+                <FormLabel htmlFor="country">Country</FormLabel>
+                <Input
+                  type="text"
+                  placeholder="Country"
+                  value={country}
+                  onChange={(event) => setCountry(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Gender</FormLabel>
-                <RadioGroup>
+                <FormLabel htmlFor="gender">Gender</FormLabel>
+                <RadioGroup name="gender" onChange={setGender} value={gender}>
                   <Stack direction="row" spacing="8">
                     <Radio value="male">Male</Radio>
                     <Radio value="female">Female</Radio>
@@ -88,13 +159,23 @@ const Signup = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Profile Image</FormLabel>
-                <Input type="file" border="none" _hover={{ cursor: 'pointer' }} />
+                <FormLabel htmlFor="profileImage">Profile Image</FormLabel>
+                <Input
+                  type="file"
+                  border="none"
+                  _hover={{ cursor: 'pointer' }}
+                  value={profileImage}
+                  onChange={(event) => setProfileImage(event?.target.value)}
+                />
               </FormControl>
 
               <FormControl>
-                <FormLabel>Bio</FormLabel>
-                <Textarea placeholder="Some information about you abd your art"></Textarea>
+                <FormLabel htmlFor="bio">Bio</FormLabel>
+                <Textarea
+                  placeholder="Some information about you abd your art"
+                  value={bio}
+                  onChange={(event) => setBio(event?.target.value)}
+                ></Textarea>
               </FormControl>
 
               <Button
@@ -103,6 +184,7 @@ const Signup = () => {
                 color="#FFFFFF"
                 fontWeight="700"
                 _hover={{ bgColor: '#82A2F7' }}
+                onClick={handleSubmit}
               >
                 Sign Up
               </Button>
