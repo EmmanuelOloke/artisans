@@ -16,11 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { email, fullName, password, phoneNumber, address, country, gender, profileImage, bio } =
       req.body;
 
-    console.log(email, fullName, password, phoneNumber, address, country);
-
     const userExists = await User.findOne({ email });
-
-    console.log(userExists);
 
     if (userExists) return res.status(409).json({ error: 'User Already exists' });
 
