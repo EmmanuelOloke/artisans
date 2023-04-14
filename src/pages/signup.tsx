@@ -33,7 +33,7 @@ const Signup = () => {
 
   const handleSubmit = async () => {
     try {
-      const data = {
+      const userData = {
         email,
         fullName,
         password,
@@ -45,11 +45,7 @@ const Signup = () => {
         bio,
       };
 
-      console.log(data);
-
-      const response = await axios.post('/api/auth/signup', data);
-
-      console.log(response);
+      const response = await axios.post('/api/auth/signup', userData);
     } catch (error) {
       console.log(error);
     }
