@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { useTheme } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { FormEventHandler, useState } from 'react';
+import React, { useState } from 'react';
 
 const Signup = () => {
   const theme = useTheme();
