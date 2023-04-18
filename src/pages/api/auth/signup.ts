@@ -21,7 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (userExists) return res.status(409).json({ error: 'User Already Exists' });
 
     if (password.length < 6)
-      return res.status(409).json({ error: 'Password should be 6 characters long' });
+      return res.status(409).json({ error: 'Password should be at least 6 characters long' });
 
     const hashedPassword = await hash(password, 12);
 
